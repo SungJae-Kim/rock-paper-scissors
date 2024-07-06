@@ -46,8 +46,7 @@ function playRound() {
     
     if (human != "rock" && human != "paper" && human != "scissors") {
         roundMsg = `You fool! ${human} is not a valid entry!`
-    }
-    else if (roundWinner === "pc") {
+    } else if (roundWinner === "pc") {
         roundMsg = `You lose! ${pc} beats ${human}`
         computerScore++;
     } else if (roundWinner === "human") {
