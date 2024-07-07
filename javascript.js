@@ -1,11 +1,11 @@
 function getComputerChoice() {
     let x = Math.random() * 100;
     let rps = "";
-    if (x <= 100 / 3) {
+    if (x < 100 / 3) {
         rps = "rock";
-    } else if (x > 100 / 3 && x < 200 / 3) {
+    } else if (x >= 100 / 3 && x <= 200 / 3) {
         rps = "paper";
-    } else if (x >= 200 / 3) {
+    } else if (x > 200 / 3) {
         rps = "scissors";
     } 
     return rps;
