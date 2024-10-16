@@ -59,6 +59,37 @@ function playRound() {
     return roundMsg;
 }
 
+function determineWinner() {
+    let roundWinner = "";
+    if (human === "rock") {
+        if (pc === "paper") {
+            roundWinner = "pc";
+        } else if (pc === "scissors") {
+            roundWinner = "human";
+        }
+    }
+    if (human === "paper") {
+        if (pc === "scissors") {
+            roundWinner = "pc";
+        } else if (pc === "rock") {
+            roundWinner = "human";
+        }
+    }
+    if (human === "scissors") {
+        if (pc === "rock") {
+            roundWinner = "pc";
+        } else if (pc === "paper") {
+            roundWinner = "human";
+        }
+    }
+}
+
+function playRock() {
+    let human = "rock";
+    let pc = getComputerChoice().toLowerCase();
+    determineWinner
+    
+}
 /*
 function playGame() {
     for (let i = 0; i < 5;i++) {
