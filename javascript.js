@@ -59,6 +59,7 @@ function playRound() {
     return roundMsg;
 }
 
+/*
 function playGame() {
     for (let i = 0; i < 5;i++) {
         console.log(playRound());
@@ -66,6 +67,6 @@ function playGame() {
     }
     return `Final Score - Player: ${humanScore}, PC: ${computerScore}`
 }
-
+*/
 
 console.log(playGame());
