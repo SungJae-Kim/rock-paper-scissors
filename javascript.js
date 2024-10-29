@@ -59,7 +59,7 @@ function playRound() {
     return roundMsg;
 }
 
-function determineWinner() {
+function determineWinner(human) {
     let roundWinner = "";
     if (human === "rock") {
         if (pc === "paper") {
@@ -82,14 +82,77 @@ function determineWinner() {
             roundWinner = "human";
         }
     }
+    return roundWinner;
 }
+
+const result = document.querySelector("#result")
 
 function playRock() {
     let human = "rock";
     let pc = getComputerChoice().toLowerCase();
-    determineWinner
-    
+    if (pc === "paper") {
+        winner = "pc";
+    } else if (pc === "scissors") {
+        winner = "human";
+    } else {
+        winner = "neither";
+    };
+    const winnerText = " is the winner!";
+    let msg = winner + winnerText;
+    const winnerMsg = document.createElement("p");
+    winnerMsg.textContent = msg;
+    result.appendChild(winnerMsg)
 }
+
+function playPaper() {
+    let human = "paper";
+    let pc = getComputerChoice().toLowerCase();
+    if (pc === "scissors") {
+        winner = "pc";
+    } else if (pc === "rock") {
+        winner = "human";
+    } else {
+        winner = "neither";
+    };
+    const winnerText = " is the winner!";
+    let msg = winner + winnerText;
+    const winnerMsg = document.createElement("p");
+    winnerMsg.textContent = msg;
+    result.appendChild(winnerMsg)
+}
+
+function playScissors() {
+    let human = "scissors";
+    let pc = getComputerChoice().toLowerCase();
+    if (pc === "rock") {
+        winner = "pc";
+    } else if (pc === "paper") {
+        winner = "human";
+    } else {
+        winner = "neither";
+    };
+    const winnerText = " is the winner!";
+    let msg = winner + winnerText;
+    const winnerMsg = document.createElement("p");
+    winnerMsg.textContent = msg;
+    result.appendChild(winnerMsg)
+}
+
+const rockbtn = document.querySelector("#rock");
+const paperbtn = document.querySelector("#paper");
+const scissorsbtn = document.querySelector("#scissors");
+
+rockbtn.addEventListener("click", function (e) {
+    playRock();
+})
+paperbtn.addEventListener("click", function (e) {
+    playPaper();
+})
+scissorsbtn.addEventListener("click", function (e) {
+    playScissors();
+})
+
+
 /*
 function playGame() {
     for (let i = 0; i < 5;i++) {
@@ -100,4 +163,4 @@ function playGame() {
 }
 */
 
-console.log(playGame());
+//console.log(playGame());
